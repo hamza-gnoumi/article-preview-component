@@ -1,0 +1,230 @@
+:root {
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+    --radius: 5px
+}
+
+* {
+    font-family: 'Manrope', sans-serif;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body {
+    background-color: var(--Light-Grayish-Blue);
+    display: grid;
+    place-content: center;
+    min-height: 95vh;
+}
+
+main {
+    background-color: white;
+    width: 730px;
+    height: 280px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    border-radius: var(--radius);
+    position: relative;
+    /* overflow: hidden; */
+
+}
+
+
+@media (max-width: 767px) {
+    main {
+        flex-direction: column;
+        height: 100%;
+        width: 325px;
+        overflow: hidden;
+
+    }
+
+    .image {
+        border-radius: 0;
+        border-top-left-radius: var(--radius);
+        border-top-right-radius: var(--radius);
+    }
+
+}
+
+.image {
+
+    overflow: hidden;
+    flex: 1.2;
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+
+}
+
+.image img {
+    width: 120%;
+    height: 100%;
+}
+
+
+.content {
+    padding: 35px 40px;
+    flex: 2;
+}
+
+@media (max-width: 767px) {
+    .content {
+        padding: 35px 30px;
+        flex: none;
+    }
+}
+
+h1 {
+    font-size: clamp(16px, 2.5vw, 24px);
+    margin: 0;
+    color: var(--Very-Dark-Grayish-Blue);
+}
+
+.content>p {
+    font-size: 13px;
+    line-height: 1.8;
+    margin-top: 5px;
+    color: var(--Very-Dark-Grayish-Blue);
+
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.person {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.person .img-person {
+    height: 35px;
+    border-radius: 50%;
+}
+
+.person .detail h5 {
+    margin: 0;
+    color: var(--Very-Dark-Grayish-Blue);
+}
+
+.person .detail p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--Grayish-Blue);
+}
+
+.info .icon-share {
+    background-color: var(--Light-Grayish-Blue);
+    height: 35px;
+    display: flex;
+    width: 35px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: var(--Very-Dark-Grayish-Blue);
+    cursor: pointer;
+    z-index: 21124;
+
+}
+
+
+@media (max-width: 767px) {
+    .icon-share-active {
+        position: relative;
+        bottom: -15px;
+    }
+
+    .share {
+
+
+        background-color: var(--Very-Dark-Grayish-Blue);
+        padding: 15px 30px;
+        position: absolute;
+        color: var(--Desaturated-Dark-Blue);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        text-transform: uppercase;
+        width: 100%;
+        height: 75px;
+
+    }
+}
+
+
+
+
+
+@media (min-width: 768px) {
+    .share::after {
+        content: "";
+        position: absolute;
+        border-style: solid;
+        border-width: 12px;
+        border-color: var(--Very-Dark-Grayish-Blue) transparent transparent transparent;
+        bottom: -24px;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+
+    .share {
+
+
+        background-color: var(--Very-Dark-Grayish-Blue);
+        padding: 15px 30px;
+        position: absolute;
+        color: var(--Desaturated-Dark-Blue);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        right: -5%;
+        top: 150px;
+        border-radius: 10px;
+        text-transform: uppercase;
+    }
+
+    .icon-share-active {
+        background-color: var(--Very-Dark-Grayish-Blue) !important;
+        color: white !important;
+    }
+}
+
+
+.share i {
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .share i {
+        font-size: 22px;
+    }
+
+}
+
+.hide {
+    display: none;
+}
+
+footer {
+    font-size: 10px;
+    text-decoration: none;
+    text-align: center;
+}
+
+footer a {
+    color: var(--Grayish-Blue);
+}
